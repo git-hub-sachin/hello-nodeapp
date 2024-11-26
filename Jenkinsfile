@@ -4,13 +4,12 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'my-node-app'
         DOCKER_TAG = 'latest'
-        GITHUB_REPO = 'https://github.com/git-hub-sachin/hello-nodeapp.git'
     }
     
     stages {
         stage('Checkout Code') {
             steps {
-                git url: "${GITHUB_REPO}"
+                git branch: 'main', url: 'https://github.com/git-hub-sachin/hello-nodeapp.git'
             }
         }
         
